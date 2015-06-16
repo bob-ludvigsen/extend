@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <title> Advanced JavaScript Project: extend() </title>
+    <meta charset="utf-8">
+    <script>
+
+        function extend(obj1, obj2) {
+            //loop through all the properties in the obj2
+            for (var prop in obj2) {
+                //check if the property already exists in obj1 with the hasOwnProperty method
+                if (! obj1.hasOwnProperty(prop)) {
+                    //merge obj2 properties into obj1
+                    obj1[prop] = obj2[prop];
+                }
+
+            }
+        }
+
+        var bird1 = {
+            name: "robin",
+            songbird: true
+        };
+
+        var bird2 = {
+            name: "ostrich",
+            songbird: false,
+            flies: false
+        };
+
+        var bird = {
+            phylum: "chordata",
+            class: "aves",
+            feathered: true,
+            flies: true
+        };
+
+        console.log("------ Extend with birds ------ ");
+        extend(bird1, bird);
+        console.log(bird1);
+
+        extend(bird2, bird);
+        console.log(bird2);
+    </script>
+</head>
+<body>
+</body>
+</html>   
